@@ -1,0 +1,10 @@
+#Below files are to be ignored from git tracking
+.env
+.env.*
+*.pem
+*.key
+id_rsa
+terraform.tfstate
+.terraform/
+node_modules/
+dist/
