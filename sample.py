@@ -1,0 +1,1 @@
+print("sample script to check precommit")
