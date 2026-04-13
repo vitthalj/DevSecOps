@@ -5,29 +5,19 @@ This repository can be used for better approaches to be used while DevSecOps imp
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install pre-commit.
+''' bash
+pip install pre-commit 
+'''
+Pre-commit file which is located in .git/hooks folder can be used to run custom rules before every commit.
 
-```bash
-pip install foobar
-```
-
-## Usage
-
-```python
-import foobar
-
-# returns 'words'
-foobar.pluralize('word')
-
-# returns 'geese'
-foobar.pluralize('goose')
-
-# returns 'phenomenon'
-foobar.singularize('phenomena')
-```
-
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first
-to discuss what you would like to change.
-
+# gitleasks Repository/ history scanning
+We can run gitleaks to scan the repo with sensitive data for every commit in CI system.
+Command to install gitleaks in windows
+''' bash
+winget install gitleaks
+'''
+# Run gitleasks command 
+''' bash
+gitleaks detect --config custom-rules.toml
+'''
