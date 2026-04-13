@@ -1,1 +1,1 @@
-print("sample script to check precommit")
+print("sample script to check  secret using precommit")
