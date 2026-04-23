@@ -37,3 +37,25 @@ Enable Dependabot which scans for vulnerabilities by looking in vulnerability da
 
 # Secure Terraform script
 We can use checkov to verify if the cloud resource will have any security threats.
+
+# Comtainer security 
+secure container = secure image + hardened run time
+
+1. use non root user in runtime
+2. use multistage docker images
+3. add .dockerignore file
+4. distroless images
+
+command to run hardened image
+ ```bash
+docker run \
+  --read-only \
+  --tmpfs /tmp \
+  --cap-drop ALL \
+  --security-opt no-new-privileges \
+  --pids-limit 100 \
+  --memory 256m \
+  --cpus 0.5 \
+  -p 3000:3000 \
+  image_name
+```
