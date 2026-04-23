@@ -7,11 +7,12 @@ RUN npm install
 COPY . .
 
 # RUNTIME stage
-FROM node:25-slim
+# use distroless image for lighrweight and secure runtime as it does not include package manager, shell, or other unnecessary tools
+FROM gcr.io/distroless/nodejs20-debian12
 WORKDIR /app
-RUN groupadd -r appuser && useradd -r -g appuser appuser
 COPY --from=build_stage /build/app.js ./app.js
 COPY --from=build_stage /build/node_modules ./node_modules
-USER appuser
 EXPOSE 3000
-CMD ["node", "app.js"]
+CMD ["app.js"]
+
+## When we use distoless image default user is root as there is no shell.
